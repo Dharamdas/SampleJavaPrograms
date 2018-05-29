@@ -1,0 +1,37 @@
+new phaser with 1 registered unArrived parties created and initial phase  number is 0
+Phaser phaser=new Phaser(1), Creates a new phaser with 1 registered unArrived parties and initial phase number is 0.
+
+ first - New unarrived party has been registered with phaser
+second - New unarrived party has been registered with phaser
+third - New unarrived party has been registered with phaser
+We have created 3 MyRunnable objects and in MyRunnable’s constructor all 3 new unarrived party has been registered with phaser.
+
+--------Phaser has started---------------
+
+ main thread has called arriveAndAwaitAdvance() and waiting for another 3 registered parties (Thread-1, Thread-2 and Thread-3) to call arriveAndAwaitAdvance().
+
+ Thread-1 - party has arrived and is working in Phase-0
+Thread-1 (party) has called arriveAndAwaitAdvance() and waiting for other 2 registered parties to call arriveAndAwaitAdvance()
+
+ Thread-2 - party has arrived and is working in Phase-0
+Thread-2 (one more party) has called arriveAndAwaitAdvance() and waiting for other 1 registered party to call arriveAndAwaitAdvance()
+
+ Thread-3 - party has arrived and is working in Phase-0
+Now, all registered parties have called arriveAndAwaitAdvance(), main thread can resume.
+
+ ------Phase-0 has been COMPLETED----------
+As, all registered parties have called arriveAndAwaitAdvance(), main thread has resumed.
+
+
+Thread-3 - party has arrived and is working in Phase-1
+Thread-2 - party has arrived and is working in Phase-1
+Thread-1 - party has arrived and is working in Phase-1
+
+ After working in phase-1 all the registered threads calls arriveAndAwaitAdvance() and than calls arriveAndDeregister(), now only main thread is registered with phaser.
+
+------Phase-1 has been COMPLETED----------
+
+ Main thread has called arriveAndAwaitAdvance() and then called arriveAndDeregister(), now there is no thread registered with phaser.
+
+ Phaser has been terminated
+As, there is no thread registered with phaser now, phaser has terminated.
