@@ -1,4 +1,4 @@
-package designpattern;
+package designpattern.singleton;
 
 public class SingletonLazyInitDoublyLocked {
 
@@ -11,10 +11,13 @@ public class SingletonLazyInitDoublyLocked {
 
     public static SingletonLazyInitDoublyLocked getSingletonInstance(){
 
+        //First check - To avoid more than one instance creation of Singleton class.
         if(singletonLazyInitInstance==null)
         {
             synchronized (SingletonLazyInitDoublyLocked.class)
             {
+                //Second check - To avoid more than one instance creation of
+                //Singleton class.
                 if(singletonLazyInitInstance==null)
                 singletonLazyInitInstance=new SingletonLazyInitDoublyLocked();
             }

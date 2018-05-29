@@ -1,4 +1,4 @@
-package designpattern;
+package designpattern.singleton;
 
 public class SingletonLazyInitTest {
 
